@@ -22,6 +22,15 @@ services:
       - ./mongod.conf:/etc/mongod.conf
     command: mongod --config /etc/mongod.conf
 
+  
+  redis:
+    image: redis:7.0
+    ports:
+      - 6379:6379
+    volumes:
+      - redis_data:/data
+
 volumes:
   postgres_data:
   mongo_data:
+  redis_data:
